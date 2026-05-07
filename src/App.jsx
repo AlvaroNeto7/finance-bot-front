@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 
 export default function App() {
 
@@ -22,53 +23,39 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+    <div className="container">
 
-      <div className="w-full max-w-2xl bg-slate-900 rounded-3xl shadow-2xl p-8 border border-slate-800">
+      <div className="card">
 
-        <div className="mb-8 text-center">
+        <h1 className="title">Finance Bot</h1>
 
-          <h1 className="text-5xl font-bold mb-3 text-emerald-400">
-            Finance Bot
-          </h1>
+        <p className="subtitle">
+          Seu assistente financeiro inteligente
+        </p>
 
-          <p className="text-slate-400 text-lg">
-            Seu assistente financeiro inteligente
-          </p>
+        <div className="section">
 
-        </div>
-
-        <div className="bg-slate-800 rounded-2xl p-6 mb-6">
-
-          <h2 className="text-xl mb-4 font-semibold text-emerald-300">
-            Registrar gasto
-          </h2>
+          <h2>Registrar gasto</h2>
 
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Ex: gastei 50 no ifood"
-            className="w-full h-32 rounded-xl bg-slate-900 border border-slate-700 p-4 text-white outline-none resize-none focus:border-emerald-400"
           />
 
-          <button
-            onClick={sendMessage}
-            className="mt-4 w-full bg-emerald-500 hover:bg-emerald-400 transition-all duration-300 rounded-xl py-4 text-lg font-bold text-slate-900"
-          >
+          <button onClick={sendMessage}>
             Enviar
           </button>
 
         </div>
 
-        <div className="bg-slate-800 rounded-2xl p-6 min-h-[180px] border border-slate-700">
+        <div className="section">
 
-          <h2 className="text-xl mb-4 font-semibold text-cyan-300">
-            Resposta da IA
-          </h2>
+          <h2>Resposta da IA</h2>
 
-          <pre className="whitespace-pre-wrap text-slate-200 text-lg leading-8">
+          <div className="response">
             {response || "Aguardando mensagem..."}
-          </pre>
+          </div>
 
         </div>
 
